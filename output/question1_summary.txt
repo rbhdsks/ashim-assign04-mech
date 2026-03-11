@@ -1,7 +1,6 @@
-ME 5107 Assignment 04 Summary
-========================================
+Question 1 Summary
+==================
 
-Problem 1 data
 Ti   = 25.0000000000 C
 Tinf = 300.0000000000 C
 Tm   = 53.5000000000 C
@@ -10,7 +9,6 @@ k    = 400.0000000000 W/m-K
 t    = 400.0000000000 s
 Target ratio = 0.1036363636
 
-Problem 1 results
 Bisection: Converged using the bisection stopping criterion.
   iterations = 30
   h          = 200.1968781305 W/m^2-K
@@ -23,14 +21,3 @@ Hybrid: Converged after 10 bisection steps followed by Newton iterations.
   iterations = 13
   h          = 200.1968770910 W/m^2-K
   residual   = -0.0000000000
-
-Problem 2 results
-Initial guess 1 = [0.1, 1.2, 2.5]
-  status        = Converged using multivariable Newton-Raphson.
-  iterations    = 22
-  root          = [0.0000000067, 0.9999999865, 2.0000000067]
-Initial guess 2 = [1, 0, 1]
-  status        = Converged using multivariable Newton-Raphson.
-  iterations    = 6
-  root          = [1.2243943234, -0.0931331386, 1.8687388151]
-  same root?    = No

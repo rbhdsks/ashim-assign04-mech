@@ -1,10 +1,11 @@
 # ME 5107 Assignment 04 Solution
 
-This workspace now contains a complete C++ solution for the scanned assignment, plus the cleaned question transcription, generated result files, and a short report.
+This workspace now contains a complete C++ solution for the scanned assignment, split into separate C++ files for Question 1 and Question 2, plus the cleaned question transcription, generated result files, and a short report.
 
 ## Files
 
-- `src/assignment04.cpp`: main C++ solution
+- `src/question1.cpp`: C++ solution for Question 1
+- `src/question2.cpp`: C++ solution for Question 2
 - `Makefile`: build and run commands
 - `question.txt`: cleaned text version of the scanned assignment
 - `report.md`: explanation report with numerical conclusions
@@ -15,14 +16,16 @@ This workspace now contains a complete C++ solution for the scanned assignment, 
 
 ```bash
 make
-./assignment04
+./question1
+./question2
 python3 plot_results.py
 ```
 
 You can also use:
 
 ```bash
-make run
+make run-q1
+make run-q2
 ```
 
 ## What the code does
@@ -43,17 +46,18 @@ For Problem 2:
 
 ## Generated outputs
 
-After running the executable:
+After running the executables:
 
-- `output/summary.txt` contains the main numerical answers
+- `output/question1_summary.txt` contains the Question 1 answers
+- `output/question2_summary.txt` contains the Question 2 answers
 - `output/part1_*.csv` contain iteration-by-iteration histories for Problem 1
 - `output/part2_*.csv` contain iteration-by-iteration histories for Problem 2
 
 After running the plot script:
 
-- `output/plots/bisection_history.png`
-- `output/plots/newton_history.png`
-- `output/plots/hybrid_history.png`
+- `output/plots/q1a_bisection_history.png`
+- `output/plots/q1b_newton_history.png`
+- `output/plots/q1c_hybrid_history.png`
 
 ## Main results
 

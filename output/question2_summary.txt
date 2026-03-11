@@ -1,0 +1,12 @@
+Question 2 Summary
+==================
+
+Initial guess 1 = [0.1, 1.2, 2.5]
+  status        = Converged using multivariable Newton-Raphson.
+  iterations    = 22
+  root          = [0.0000000067, 0.9999999865, 2.0000000067]
+Initial guess 2 = [1, 0, 1]
+  status        = Converged using multivariable Newton-Raphson.
+  iterations    = 6
+  root          = [1.2243943234, -0.0931331386, 1.8687388151]
+  same root?    = No
