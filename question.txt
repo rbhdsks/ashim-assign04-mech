@@ -1,0 +1,61 @@
+ME 5107: Numerical Methods in Thermal Engineering
+Programming Assignment 04
+
+Note:
+This is a cleaned transcription of the scanned question in this folder. The scan quality was low, so notation has been standardized while keeping the original meaning.
+
+1. A simple procedure for measuring surface convection heat transfer coefficient involves coating the surface with a thin layer of material having a precise melting-point temperature. The surface is then heated and, by determining the time required for melting to occur, the convection coefficient is determined. The following experimental arrangement, shown in Figure 2, uses this procedure to determine the convection coefficient for gas flow normal to a surface. Specifically, a long copper rod is encased in a super-insulator of very low thermal conductivity, and a very thin coating is applied to its exposed surface.
+
+If the rod is initially at 25 C and gas flow with T_inf = 300 C is initiated, and the thin layer of material was observed to melt at 53.5 C after 6 minutes and 40 seconds from the beginning of the experiment, calculate the heat transfer coefficient h. The thermal conductivity and diffusivity of copper can be taken as 400 W/m-K and 10^-4 m^2/s, respectively, and the surface coating can be assumed to be negligibly thin so that z is approximately 0. Assuming the long cylindrical rod as a semi-infinite medium, the following analytical equation relates the temperature at a given position and time, T(z,t), to the convection at the surface and the properties of the material:
+
+(T(z,t) - T_i) / (T_inf - T_i)
+    = erfc(z / (2 * sqrt(alpha * t)))
+      - exp((h * z / k) + (h^2 * alpha * t / k^2))
+        * erfc((z / (2 * sqrt(alpha * t))) + (h * sqrt(alpha * t) / k))
+
+where:
+T_i   = initial temperature of the solid
+T_inf = temperature of the convecting fluid
+z     = distance from the surface
+t     = time
+h     = convection coefficient
+alpha = thermal diffusivity
+k     = thermal conductivity
+erfc(beta) = 1 - erf(beta)
+
+The Gauss error function is:
+
+erf(beta) = (2 / sqrt(pi)) * integral from 0 to beta of exp(-u^2) du
+
+(a) (10 points) Write a program to find the root of a nonlinear equation using the bisection method and determine the heat transfer coefficient h in the above problem. Use the initial interval h in [1, 10000] W/m^2-K and a tolerance of epsilon = 1e-5. Plot h as a function of iteration number.
+
+(b) (10 points) Write a program to find the zero of a nonlinear equation using Newton's method and repeat the calculation of h in the above problem. Use the initial guess h = 5000 W/m^2-K and the same tolerance as above. Plot h as a function of iteration number.
+
+(c) (20 points) Combine the bisection method with Newton's method to get the best of both worlds. Limit the number of iterations to 10 in the bisection method and use the latest bisection value as the initial guess for Newton's method, continuing the iteration count from 11 onward. Plot h as a function of iteration number. Taking the latest calculated value to be the exact solution, determine the error after each iteration. For all three cases, also plot the rate of convergence as a function of iteration number:
+
+- Bisection: e_(k+1) / e_k
+- Newton:    e_(k+1) / e_k^2
+
+You may calculate the integral arising in the Gauss error function using the trapezoidal rule:
+
+integral from a to b of f(x) dx
+    approximately equal to
+    (Delta x / 2) * [f(x_1) + 2 f(x_2) + 2 f(x_3) + ... + 2 f(x_(N-1)) + f(x_N)]
+
+where:
+N          = number of grid points (taken as 51)
+x_i        = a + (i - 1) * Delta x
+Delta x    = (b - a) / (N - 1)
+
+2. (30 points) Solve the following system of nonlinear equations using two starting guesses:
+
+x^(0) = [0.1, 1.2, 2.5]^T
+x^(0) = [1, 0, 1]^T
+
+Do the two solutions converge to the same root? If not, why?
+
+The system is:
+
+x + y + z = 3
+x^2 + y^2 + z^2 = 5
+e^x + x y - x z = 1
