@@ -1,0 +1,15 @@
+Question 1(a) Summary
+=====================
+
+Method   = Bisection
+Ti       = 25.0000000000 C
+Tinf     = 300.0000000000 C
+Tmelt    = 53.5000000000 C
+alpha    = 0.0001000000 m^2/s
+k        = 400.0000000000 W/m-K
+time     = 400.0000000000 s
+ratio    = 0.1036363636
+status   = Converged using the bisection stopping criterion.
+iterations = 30
+h          = 200.1968781305 W/m^2-K
+residual   = 0.0000000005

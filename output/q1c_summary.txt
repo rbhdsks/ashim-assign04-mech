@@ -1,0 +1,15 @@
+Question 1(c) Summary
+=====================
+
+Method   = Hybrid (10 bisection steps + Newton)
+Ti       = 25.0000000000 C
+Tinf     = 300.0000000000 C
+Tmelt    = 53.5000000000 C
+alpha    = 0.0001000000 m^2/s
+k        = 400.0000000000 W/m-K
+time     = 400.0000000000 s
+ratio    = 0.1036363636
+status   = Converged after 10 bisection steps followed by Newton iterations.
+iterations = 13
+h          = 200.1968770910 W/m^2-K
+residual   = -0.0000000000

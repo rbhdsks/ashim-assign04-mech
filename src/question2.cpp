@@ -13,6 +13,14 @@ namespace fs = std::filesystem;
 
 namespace {
 
+// ============================================================================
+// Question 2
+// ----------------------------------------------------------------------------
+// This file solves Question 2 from the assignment.
+// Unlike Question 1, Question 2 is not split into subparts in the prompt, so
+// it remains as a single standalone program.
+// ============================================================================
+
 // One row of iteration history for the 3-variable Newton-Raphson solver.
 struct SystemIteration {
     int iteration = 0;
@@ -210,7 +218,7 @@ void writeSummary(const fs::path &path,
         const auto &r1 = guess_one.history.back().state;
         const auto &r2 = guess_two.history.back().state;
         const double distance = std::max({std::fabs(r1[0] - r2[0]),
-                                         std::fabs(r1[1] - r2[1]),
+                                          std::fabs(r1[1] - r2[1]),
                                           std::fabs(r1[2] - r2[2])});
         out << "  same root?    = " << (distance < 1.0e-6 ? "Yes" : "No") << "\n";
     }
@@ -245,11 +253,11 @@ int main() {
     const auto guess_two = solveSystemWithNewton({1.0, 0.0, 1.0}, 1.0e-10, 100);
 
     // Save the raw iteration history for both runs.
-    writeCsv("output/part2_guess1.csv", guess_one);
-    writeCsv("output/part2_guess2.csv", guess_two);
+    writeCsv("output/q2_guess1.csv", guess_one);
+    writeCsv("output/q2_guess2.csv", guess_two);
 
     // Save and print the concise summary required for the report.
-    writeSummary("output/question2_summary.txt", guess_one, guess_two);
+    writeSummary("output/q2_summary.txt", guess_one, guess_two);
     printSummary(guess_one, guess_two);
 
     // Normal successful program exit.

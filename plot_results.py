@@ -86,21 +86,21 @@ def plot_scalar_method(filename, question_label, method_name, rate_label, output
 def main():
     PLOTS.mkdir(parents=True, exist_ok=True)
     plot_scalar_method(
-        "part1_bisection.csv",
+        "q1a_bisection.csv",
         "Q1(a)",
         "Bisection Method",
         "e_(k+1) / e_k",
         "q1a_bisection_history.png",
     )
     plot_scalar_method(
-        "part1_newton.csv",
+        "q1b_newton.csv",
         "Q1(b)",
         "Newton Method",
         "e_(k+1) / e_k^2",
         "q1b_newton_history.png",
     )
     plot_scalar_method(
-        "part1_hybrid.csv",
+        "q1c_hybrid.csv",
         "Q1(c)",
         "Hybrid Bisection + Newton Method",
         "bisection: e_(k+1)/e_k, Newton: e_(k+1)/e_k^2",
